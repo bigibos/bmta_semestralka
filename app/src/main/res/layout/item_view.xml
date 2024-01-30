@@ -1,0 +1,97 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/row"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:paddingTop="8dp"
+    android:paddingBottom="8dp"
+    android:paddingLeft="16dp"
+    android:paddingRight="0dp">
+
+    <TextView
+        android:id="@+id/itemAmount"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="48dp"
+        android:fontFamily="sans-serif-medium"
+        android:text="250"
+        android:textSize="16sp"
+        app:layout_constraintBottom_toBottomOf="@+id/itemCount"
+        app:layout_constraintEnd_toStartOf="@+id/itemCount"
+        app:layout_constraintTop_toTopOf="@+id/itemCount"
+        app:layout_constraintVertical_bias="0.0" />
+
+    <TextView
+        android:id="@+id/itemUnit"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="4dp"
+        android:fontFamily="sans-serif-medium"
+        android:text="ml"
+        android:textAllCaps="false"
+        android:textColor="#A5A5A5"
+        android:textSize="14sp"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toBottomOf="@+id/itemAmount"
+        app:layout_constraintStart_toEndOf="@+id/itemAmount" />
+
+    <TextView
+        android:id="@+id/itemCountLabel"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="4dp"
+        android:fontFamily="sans-serif-medium"
+        android:text="ks"
+        android:textAllCaps="false"
+        android:textColor="#A5A5A5"
+        android:textSize="14sp"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toBottomOf="@+id/itemCount"
+        app:layout_constraintStart_toEndOf="@+id/itemCount" />
+
+    <TextView
+        android:id="@+id/itemCount"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="48dp"
+        android:layout_marginBottom="8dp"
+        android:fontFamily="sans-serif-medium"
+        android:text="2"
+        android:textSize="16sp"
+        app:layout_constraintBottom_toBottomOf="@+id/removeItemButton"
+        app:layout_constraintEnd_toStartOf="@+id/removeItemButton"
+        app:layout_constraintTop_toTopOf="@+id/removeItemButton"
+        app:layout_constraintVertical_bias="0.761" />
+
+    <Button
+        android:id="@+id/removeItemButton"
+        android:layout_width="55dp"
+        android:layout_height="47dp"
+        android:background="#00AE1919"
+        android:backgroundTint="#00D64A4A"
+        android:backgroundTintMode="add"
+        android:includeFontPadding="false"
+        android:textColor="#32037E"
+        android:textSize="16sp"
+        app:icon="@drawable/cross_small"
+        app:iconTint="#32037E"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:rippleColor="#E3A9A9"
+        app:strokeColor="#006E5151" />
+
+    <TextView
+        android:id="@+id/itemName"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:fontFamily="sans-serif-medium"
+        android:text="Mirinda"
+        android:textSize="16sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.5" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>
