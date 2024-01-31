@@ -31,15 +31,20 @@ class MainActivity : AppCompatActivity(), ItemClickListener {
         binding = ActivityMainBinding.inflate(layoutInflater)
         setContentView(binding.root)
 
-        items = LinkedList()
-        loadItems()
+        // Check if there is saved instance state
+        if (savedInstanceState != null) {
+            items = savedInstanceState.getSerializable("savedItems") as LinkedList<ShopItem>
+        } else {
+            // If no saved instance state, load items
+            loadItems()
 
-        val mainIntent = getIntent()
-        val newItem = mainIntent.getSerializableExtra("newItem") as? ShopItem
-        Toast.makeText(this, newItem.toString(), Toast.LENGTH_LONG)
-        if (newItem != null) {
-            items.add(newItem)
-            saveItems()
+            val mainIntent = getIntent()
+            val newItem = mainIntent.getSerializableExtra("newItem") as? ShopItem
+
+            if (newItem != null) {
+                items.add(newItem)
+                saveItems()
+            }
         }
 
         binding.itemRecycler.layoutManager = LinearLayoutManager(this)
@@ -48,6 +53,12 @@ class MainActivity : AppCompatActivity(), ItemClickListener {
         binding.addItemButton.setOnClickListener {
             startActivity(Intent(this, NewItemActivity::class.java))
         }
+    }
+
+    override fun onSaveInstanceState(outState: Bundle) {
+        super.onSaveInstanceState(outState)
+        // Save the items list to the bundle
+        outState.putSerializable("savedItems", items)
     }
 
     private fun loadItems() {

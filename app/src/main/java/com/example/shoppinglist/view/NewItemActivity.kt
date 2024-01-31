@@ -23,7 +23,7 @@ class NewItemActivity : AppCompatActivity() {
     var itemUnit: Unit
 
     init {
-        itemName = "Test name"
+        itemName = ""
         itemAmount = 0f
         itemCount = 1
         itemUnit = Unit.values().first()
