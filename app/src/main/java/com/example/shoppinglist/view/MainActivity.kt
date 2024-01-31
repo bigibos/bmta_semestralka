@@ -26,15 +26,12 @@ class MainActivity : AppCompatActivity(), ItemClickListener {
 
     private var items = LinkedList<ShopItem>()
 
-    init {
-        items = LinkedList()
-    }
-
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         binding = ActivityMainBinding.inflate(layoutInflater)
         setContentView(binding.root)
 
+        items = LinkedList()
         loadItems()
 
         val mainIntent = getIntent()
